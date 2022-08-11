@@ -20,7 +20,7 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <h1>Hola</h1>
-        <form action="{% url 'create_tasks'%}" method="POST">
+        <form action="{% url 'update_tasks'%}" method="POST">
             {%csrf_token%}
         <input type="text" name="name" placeholder="escribir un titulo">
            <textarea name="description"  rows="3" placeholder="escribir la descripcion"></textarea>

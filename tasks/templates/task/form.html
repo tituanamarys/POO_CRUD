@@ -1,0 +1,32 @@
+<form enctype="multipart/form-data" method="post">
+{% csrf_token %}
+{%for fields in form %}
+<form class="d-flex">
+    <div class="col">
+        <div class="mb-3">
+            <label for="" class="form-label">{{fields.label}}</label>
+
+            {% if fields.field.widget.input_type == 'file' and fields.value %}
+            <br>
+            <img src="{{MEDIA_URL}}/images/{{fields.value}}" width="100" alt="" srcset="">
+            {% endif %}
+            <input 
+            type="{{fields.field.widget.input_type}}"
+            name="{{fields.name}}" 
+            id=""
+            class="form-control"
+            placeholder={{fields.label}} 
+            aria-describedby="helpId"
+            value="{{fields.value | default:''}}"
+            >
+            <small id="helpId" class="text-muted">Help text</small>
+        </div>
+        <div class="col-12 help-text">{{fields.errors}}</div>
+
+        {%endfor%}
+
+        <input name="" id="" class="btn btn-primary" type="submit" value="Enviar Informacion">
+        <a name="" id="" class="btn btn-primary" href="{%url 'list_tasks'%}" role="button">Cancelar</a>
+    </div>
+</form>
+</form>

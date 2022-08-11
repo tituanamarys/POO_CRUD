@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block titulo%} Editar tarea {%endblock%}
+{% block contenido%}  
+<div class="card">
+    <div class="card-header">
+        Editar tarea
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Datos de la tarea</h4>
+        {%include 'task/form.html'%}
+    </div>
+</div>
+
+{%endblock%}
